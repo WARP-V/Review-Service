@@ -20,5 +20,16 @@ var reviewSchema = new Schema({
 
 var Review = mongoose.model("Review", reviewSchema);
 
+var retrieveReviews = (shoeID, callback) => {
+  Review.find({shoeID}, (error, docs) => {
+    if (error) {
+      callback(error, null);
+    } else {
+      callback(null, docs);
+    }
+  });
+}
+
 module.exports.Review = Review;
 module.exports.db = db;
+module.exports.retrieveReviews = retrieveReviews;

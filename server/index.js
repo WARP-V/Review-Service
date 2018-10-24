@@ -1,13 +1,22 @@
 var express = require('express');
 var parseBody = require('body-parser');
 var path = require('path');
-var Review = require('../database/index.js');
+var dbConnection = require('../database/index.js');
+
 var PORT = 3000;
 
 var app = express();
 
-app.use(express.static(path.join(__dirname + 'client/dist/')));
+console.log(path.join(__dirname, '../client/dist/'));
+
+app.use(express.static(path.join(__dirname, '../client/dist/')));
 app.use(parseBody.json());
+
+app.get('/shoes/:shoeID', (req, res) => {
+  console.log(req.params);
+  var shoeID = req.params.shoeID;
+  res.end();
+})
 
 app.listen(PORT, () => {
   console.log('listening on port: ' + PORT);
