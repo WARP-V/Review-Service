@@ -1,17 +1,33 @@
 {
-  "name": "",
-  "version": "",
-  "description": "",
-  "author": "",
-  "license": "",
+  "name": "review-service",
+  "description": "> Project description",
+  "author": "alexander wiederin",
+  "license": "ISC",
   "engines": {
     "node": ">=6.13.0"
   },
   "scripts": {
+    "react-dev": "webpack --watch",
+    "server-dev": "nodemon server/index.js"
   },
   "dependencies": {
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.4",
+    "webpack": "^4.22.0"
   },
   "devDependencies": {
-    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor"
-  }
+    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor.git",
+    "webpack-cli": "^3.1.2"
+  },
+  "version": "1.0.0",
+  "main": "/client",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WARP-V/Review-Service.git"
+  },
+  "bugs": {
+    "url": "https://github.com/WARP-V/Review-Service/issues"
+  },
+  "homepage": "https://github.com/WARP-V/Review-Service#readme"
 }
