@@ -1,5 +1,8 @@
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/nike');
+
+var db = mongoose.connect('mongodb://localhost:27017/nike');
+mongoose.Promise = global.Promise;
+
 var Schema = mongoose.Schema;
 
 var reviewSchema = new Schema({
@@ -18,3 +21,4 @@ var reviewSchema = new Schema({
 var Review = mongoose.model("Review", reviewSchema);
 
 module.exports.Review = Review;
+module.exports.db = db;
