@@ -9,12 +9,12 @@ module.exports = {
     path: DIST_DIR
   },
   module : {
-    loaders : [
+    rules : [
       {
         test : /\.jsx?/,
         include : SRC_DIR,
         loader : 'babel-loader',      
-        query: {
+        options: {
           presets: ['@babel/preset-env', '@babel/preset-react']
         }
       }
