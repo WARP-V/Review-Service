@@ -57,7 +57,6 @@ var dummyReviews = createDummyReviews();
 const insertDummyReviews = function() {
   Schema.Review.create(dummyReviews)
     .then((result) => {
-      console.log(result);
       dbConnection.close()
     })
     .catch((error) => {
@@ -66,3 +65,6 @@ const insertDummyReviews = function() {
 };
 
 insertDummyReviews();
+
+module.exports.insertDummyReviews = insertDummyReviews;
+module.exports.createDummyReviews = createDummyReviews;
