@@ -1,8 +1,5 @@
 var mongoose = require('mongoose');
 
-var db = mongoose.connect('mongodb://localhost:27017/nike');
-mongoose.Promise = global.Promise;
-
 var Schema = mongoose.Schema;
 
 var reviewSchema = new Schema({
@@ -31,5 +28,5 @@ var retrieveReviews = (shoeID, callback) => {
 }
 
 module.exports.Review = Review;
-module.exports.db = db;
 module.exports.retrieveReviews = retrieveReviews;
+
