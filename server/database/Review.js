@@ -1,7 +1,4 @@
 var mongoose = require('mongoose');
-var dbConnection = require('./index.js');
-
-mongoose.Promise = global.Promise;
 
 var Schema = mongoose.Schema;
 
