@@ -9,7 +9,8 @@
   "scripts": {
     "react-dev": "webpack -d --watch",
     "server-dev": "nodemon server/index.js",
-    "db-seed": "node server/database/newSeed.js"
+    "db-seed": "node server/database/newSeed.js",
+    "test-db": "jest server/database/test.js"
   },
   "dependencies": {
     "@babel/core": "^7.1.2",
@@ -28,6 +29,7 @@
   },
   "devDependencies": {
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor.git",
+    "jest": "^23.6.0",
     "webpack-cli": "^3.1.2"
   },
   "version": "1.0.0",
