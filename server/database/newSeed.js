@@ -57,7 +57,7 @@ var dummyReviews = createDummyReviews();
 const insertDummyReviews = function() {
   Schema.Review.create(dummyReviews)
     .then((result) => {
-      dbConnection.close()
+      console.log('success');
     })
     .catch((error) => {
       console.log(error);
