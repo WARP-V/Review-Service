@@ -39,4 +39,5 @@ var retrieveAllReviews = (callback) => {
 
 module.exports.Review = Review;
 module.exports.retrieveShoeReviews = retrieveShoeReviews;
+module.exports.retrieveAllReviews = retrieveAllReviews;
 
