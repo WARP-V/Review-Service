@@ -1,7 +1,7 @@
 const express = require('express');
 const parseBody = require('body-parser');
 const path = require('path');
-// const dbConnection = require('./database/index.js');
+const Review = require('./database/Review.js');
 
 const PORT = 3001;
 
@@ -10,9 +10,16 @@ const app = express();
 app.use(express.static(path.join(__dirname, '../public/')));
 app.use(parseBody.json());
 
-app.get('/shoes/:shoeID', (req, res) => {
-  // const shoeID = req.params.shoeID;
-  res.end();
+app.get('/:shoeID/reviews', (req, res) => {
+  const { shoeID } = req.params;
+  // console.log(JSON.stringify(shoeID));
+  Review.retrieveShoeReviews(shoeID, (error, reviews) => {
+    if (error) {
+      res.status(500).end();
+    } else {
+      res.status(200).send(reviews).end();
+    }
+  });
 });
 
 app.listen(PORT, () => {
