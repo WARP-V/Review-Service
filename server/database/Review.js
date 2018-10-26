@@ -9,35 +9,32 @@ const reviewSchema = new Schema({
   stars: {
     type: Number,
     min: 0,
-    max: 5
+    max: 5,
   },
   body: String,
-  createdAt: Date
+  createdAt: Date,
 });
 
-const Review = mongoose.model("Review", reviewSchema);
+const Review = mongoose.model('Review', reviewSchema);
 
 const retrieveShoeReviews = (shoeID, callback) => {
-  Review.find({shoeID}, (error, docs) => {
+  Review.find({ shoeID }, (error, docs) => {
     if (error) {
       callback(error, null);
     } else {
       callback(null, docs);
     }
   });
-}
+};
 
-var retrieveAllReviews = (callback) => {
+const retrieveAllReviews = (callback) => {
   Review.find((error, docs) => {
     if (error) {
-      callback(error, null);
-    } else {
-      callback(null, docs);
-    }
+      return callback(error, null);
+    } return callback(null, docs);
   });
-}
+};
 
 module.exports.Review = Review;
 module.exports.retrieveShoeReviews = retrieveShoeReviews;
 module.exports.retrieveAllReviews = retrieveAllReviews;
-
