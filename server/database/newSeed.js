@@ -1,4 +1,5 @@
 const Schema = require('./Review.js');
+var dbConnection = require('./index.js');
 
 
 Schema.Review.deleteMany({}, function(err) {
@@ -68,11 +69,7 @@ const insertDummyReviews = function() {
     });
 };
 
-
-
 insertDummyReviews();
-
-
 
 module.exports.insertDummyReviews = insertDummyReviews;
 module.exports.createDummyReviews = createDummyReviews;
