@@ -1,8 +1,8 @@
-var mongoose = require('mongoose');
+const mongoose = require('mongoose');
 
-var Schema = mongoose.Schema;
+const { Schema } = mongoose;
 
-var reviewSchema = new Schema({
+const reviewSchema = new Schema({
   shoeID: String,
   author: String,
   title: String,
@@ -15,9 +15,9 @@ var reviewSchema = new Schema({
   createdAt: Date
 });
 
-var Review = mongoose.model("Review", reviewSchema);
+const Review = mongoose.model("Review", reviewSchema);
 
-var retrieveShoeReviews = (shoeID, callback) => {
+const retrieveShoeReviews = (shoeID, callback) => {
   Review.find({shoeID}, (error, docs) => {
     if (error) {
       callback(error, null);
