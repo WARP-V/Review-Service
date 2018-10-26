@@ -1,5 +1,4 @@
 const Schema = require('./Review.js');
-const dbConnection = require('./index.js');
 
 
 Schema.Review.deleteMany({}, () => {
