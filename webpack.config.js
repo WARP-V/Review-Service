@@ -1,6 +1,6 @@
-var path = require('path');
-var client_dir = path.join(__dirname, '/client');
-var public_dir = path.join(__dirname, '/public');
+const path = require('path');
+const client_dir = path.join(__dirname, '/client');
+const public_dir = path.join(__dirname, '/public');
 
 module.exports = {
   entry: `${client_dir}/index.jsx`,
