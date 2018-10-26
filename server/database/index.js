@@ -1,5 +1,5 @@
-var mongoose = require('mongoose');
+const mongoose = require('mongoose');
 
-var dbConnection = mongoose.connect('mongodb://localhost:27017/nike', { useNewUrlParser: true });
+const dbConnection = mongoose.connect('mongodb://localhost:27017/nike', { useNewUrlParser: true });
 
 module.exports.dbConnection = dbConnection;

@@ -1,5 +1,5 @@
-var Schema = require('./Review.js');
-var dbConnection = require('./index.js');
+const Schema = require('./Review.js');
+
 
 Schema.Review.deleteMany({}, function(err) {
   console.log('deleting it worked')
