@@ -13,11 +13,11 @@ var reviewSchema = new Schema({
   },
   body: String,
   createdAt: Date
-})
+});
 
 var Review = mongoose.model("Review", reviewSchema);
 
-var retrieveReviews = (shoeID, callback) => {
+var retrieveShoeReviews = (shoeID, callback) => {
   Review.find({shoeID}, (error, docs) => {
     if (error) {
       callback(error, null);
@@ -27,6 +27,16 @@ var retrieveReviews = (shoeID, callback) => {
   });
 }
 
+var retrieveAllReviews = (callback) => {
+  Review.find((error, docs) => {
+    if (error) {
+      callback(error, null);
+    } else {
+      callback(null, docs);
+    }
+  });
+}
+
 module.exports.Review = Review;
-module.exports.retrieveReviews = retrieveReviews;
+module.exports.retrieveShoeReviews = retrieveShoeReviews;
 
