@@ -3,16 +3,13 @@ const parseBody = require('body-parser');
 const path = require('path');
 const Review = require('./database/Review.js');
 
-const PORT = 3001;
+const api = express();
 
-const app = express();
+api.use(express.static(path.join(__dirname, '../public/')));
+api.use(parseBody.json());
 
-app.use(express.static(path.join(__dirname, '../public/')));
-app.use(parseBody.json());
-
-app.get('/:shoeID/reviews', (req, res) => {
+api.get('/:shoeID/reviews', (req, res) => {
   const { shoeID } = req.params;
-  // console.log(JSON.stringify(shoeID));
   Review.retrieveShoeReviews(shoeID, (error, reviews) => {
     if (error) {
       res.status(500).end();
@@ -22,6 +19,4 @@ app.get('/:shoeID/reviews', (req, res) => {
   });
 });
 
-app.listen(PORT, () => {
-  console.log(`listening on port: ${PORT}`);
-});
+module.exports = api;
