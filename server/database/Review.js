@@ -4,6 +4,8 @@ mongoose.connect('mongodb://localhost:27017/nike', { useNewUrlParser: true });
 
 const { Schema } = mongoose;
 
+mongoose.connect('mongodb://localhost:27017/nike', { useNewUrlParser: true });
+
 const reviewSchema = new Schema({
   shoeID: String,
   author: String,
