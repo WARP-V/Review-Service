@@ -1,18 +1,19 @@
 const path = require('path');
-const client_dir = path.join(__dirname, '/client');
-const public_dir = path.join(__dirname, '/public');
+
+const clientDirectory = path.join(__dirname, '/client');
+const publicDirectory = path.join(__dirname, '/public');
 
 module.exports = {
-  entry: `${client_dir}/index.jsx`,
+  entry: `${clientDirectory}/index.jsx`,
   output: {
     filename: 'bundle.js',
-    path: public_dir
+    path: publicDirectory
   },
   module : {
     rules : [
       {
         test : /\.jsx?/,
-        include : client_dir,
+        include : clientDirectory,
         loader : 'babel-loader',      
         options: {
           presets: ['@babel/preset-env', '@babel/preset-react']
