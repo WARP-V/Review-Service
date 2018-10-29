@@ -11,7 +11,7 @@
     "server-dev": "nodemon server/server.js",
     "db-seed": "node server/database/newSeed.js",
     "test-db": "jest server/database/test.js",
-    "test-server": "jest --detectOpenHandles server/server.test.js",
+    "test-server": "jest server/server.test.js",
     "eslint-dev": "./node_modules/.bin/eslint --ignore-path .gitignore ."
   },
   "dependencies": {
