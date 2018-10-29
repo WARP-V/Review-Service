@@ -27,7 +27,7 @@ test('should respond respond with the reviews in the required data shape', (done
       .toBe('object');
     expect(requiredProperties.every(property => Object.keys(response.body[0]).includes(property)))
       .toBe(true);
-    expect(response.body.every(review => review.stars > 0 && review.stars < 6))
+    expect(response.body.every(review => review.stars >= 0 && review.stars < 6))
       .toBeTruthy();
     expect(typeof response.body[0].createdAt)
       .toBe('string');
