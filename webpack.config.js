@@ -1,3 +1,5 @@
+/* eslint-disable */ 
+
 const path = require('path');
 
 const clientDirectory = path.join(__dirname, '/client');
@@ -8,6 +10,9 @@ module.exports = {
   output: {
     filename: 'bundle.js',
     path: publicDirectory
+  },
+  resolve: {
+    extensions: ['.jsx', '.js']
   },
   module : {
     rules : [
