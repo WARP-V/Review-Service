@@ -15,12 +15,17 @@ const ReviewListEntry = ({ review }) => (
         {review.createdAt}
       </span>
     </div>
-    {review.body.length > 245
+    {review.body.length > 200
       ? (
-        <p>
-          {review.body.slice(0, 245)}
-          <span>...</span>
-        </p>
+        <div>
+          <p>
+            {review.body.slice(0, 200)}
+            <span>...</span>
+          </p>
+          <div>
+            <button type="button">More</button>
+          </div>
+        </div>
       ) : <p>{review.body}</p>}
   </div>
 );
