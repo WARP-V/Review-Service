@@ -10,7 +10,7 @@ class App extends React.Component {
     this.state = {
       shoeID: '554724-071',
       reviews: [],
-      averageRating: undefined,
+      averageRating: 0,
     };
     this.open = false;
     this.getReviews = this.getReviews.bind(this);
@@ -59,4 +59,3 @@ class App extends React.Component {
 
 export default App;
 
-// <span className="arrow arrow-down" data-css-1mqb043=""></span>
