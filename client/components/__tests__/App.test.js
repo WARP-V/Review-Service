@@ -7,7 +7,7 @@ import ReviewList from '../ReviewList';
 
 Enzyme.configure({ adapter: new Adapter() });
 
-describe('<App />', () => {
+describe('<App /> Component', () => {
   it('should render the <App /> component', () => {
     const app = shallow(<App />);
     expect(app.exists()).toBeTruthy();
@@ -23,5 +23,14 @@ describe('<App />', () => {
     const app = shallow(<App />);
     expect(app.find(OverallStars).length).toBe(1);
     expect(app.find(ReviewList).length).toBe(1);
+  });
+});
+
+describe('<App /> Functionality', () => {
+  it('should create App component with getReviews method', () => {
+    const app = shallow(<App />);
+    expect(app.state('open')).toBeFalsy();
+    app.find('.overallButton').simulate('click');
+    expect(app.state('open')).toBeTruthy();
   });
 });
