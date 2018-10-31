@@ -10,12 +10,15 @@ class App extends React.Component {
     this.state = {
       shoeID: '554724-071',
       reviews: [],
-      averageRating: undefined,
+      averageRating: 0,
+      open: false,
     };
+
     this.open = false;
     this.getReviews = this.getReviews.bind(this);
     this.calculateAverageRating = this.calculateAverageRating.bind(this);
     this.calculateAverageRating = this.calculateAverageRating.bind(this);
+    this.toggleSize = this.toggleSize.bind(this);
   }
 
   componentDidMount() {
@@ -32,6 +35,11 @@ class App extends React.Component {
       });
   }
 
+  toggleSize() {
+    const open = !this.state.open;
+    this.setState({ open });
+  }
+
   calculateAverageRating(reviews) {
     const averageRating = reviews.reduce((av, rev) => av + (rev.stars / reviews.length), 0);
     this.setState({ averageRating });
@@ -39,8 +47,8 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
-        <div className="reviews">
+      <div className={this.state.open ? 'all reviews' : 'reviews'}>
+        <button className='overallButton' type='button' onClick={() => this.toggleSize()}>
           <span>
             Reviews (
             {this.state.reviews.length}
@@ -50,7 +58,7 @@ class App extends React.Component {
             <OverallStars averageRating={this.state.averageRating} />
           </span>
           <span className="arrow arrow-down" data-css-1mqb043 />
-        </div>
+        </button>
         <ReviewList reviews={this.state.reviews} />
       </div>
     );
@@ -59,4 +67,3 @@ class App extends React.Component {
 
 export default App;
 
-// <span className="arrow arrow-down" data-css-1mqb043=""></span>
