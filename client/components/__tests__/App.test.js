@@ -27,10 +27,29 @@ describe('<App /> Component', () => {
 });
 
 describe('<App /> Functionality', () => {
-  it('should create App component with getReviews method', () => {
+  it('should toggle state when Reviews button is clicked', () => {
     const app = shallow(<App />);
     expect(app.state('open')).toBeFalsy();
     app.find('.overallButton').simulate('click');
     expect(app.state('open')).toBeTruthy();
+  });
+
+  it('should toggle the class of the div when the Reviews button is clicked once', () => {
+    const app = shallow(<App />);
+    expect(app.first().hasClass('reviews')).toBeTruthy();
+    expect(app.first().hasClass('all')).toBeFalsy();
+    app.find('.overallButton').simulate('click');
+    expect(app.first().hasClass('reviews')).toBeTruthy();
+    expect(app.first().hasClass('all')).toBeTruthy();
+  });
+
+  it('should toggle the class of the div when the Reviews button is clicked a second time', () => {
+    const app = shallow(<App />);
+    expect(app.first().hasClass('reviews')).toBeTruthy();
+    expect(app.first().hasClass('all')).toBeFalsy();
+    app.find('.overallButton').simulate('click');
+    app.find('.overallButton').simulate('click');
+    expect(app.first().hasClass('reviews')).toBeTruthy();
+    expect(app.first().hasClass('all')).toBeFalsy();
   });
 });

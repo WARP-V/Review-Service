@@ -10,7 +10,7 @@ class App extends React.Component {
     this.state = {
       shoeID: '554724-071',
       reviews: [],
-      averageRating: 0,
+      averageRating: 1,
       open: false,
     };
 

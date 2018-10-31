@@ -8,7 +8,7 @@ Enzyme.configure({ adapter: new Adapter() });
 
 describe('<OverallStars />', () => {
   it('should render the OverallStars component', () => {
-    const overallStars = shallow(<OverallStars />);
+    const overallStars = shallow(<OverallStars averageRating={3} />);
     expect(overallStars.exists()).toBeTruthy();
   });
 });
