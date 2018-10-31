@@ -2,36 +2,55 @@ import React from 'react';
 import propTypes from 'prop-types';
 import ReviewStars from './ReviewStars';
 
-const ReviewListEntry = ({ review }) => (
-  <div className="review">
-    <p>{review.title}</p>
-    <div>
-      <span className="reviewstars">
-        <ReviewStars rating={review.stars} />
-      </span>
-      <span className="authoranddate">
-        {review.author}
-         -
-        {review.createdAt}
-      </span>
-    </div>
-    {review.body.length > 200
-      ? (
-        <div>
-          <p>
-            {review.body.slice(0, 200)}
-            <span>...</span>
-          </p>
-          <div>
-            <button type="button">More</button>
-          </div>
-        </div>
-      ) : <p>{review.body}</p>}
-  </div>
-);
 
-ReviewListEntry.propTypes = {
-  review: propTypes.object.isRequired,
-};
+class ReviewListEntry extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      more: false,
+    };
+    this.toggleMore = this.toggleMore.bind(this);
+  }
+
+  toggleMore() {
+    const more = !this.state.more;
+    this.setState({ more });
+  }
+
+  render() {
+    return (
+      <div className="review">
+        <p>{this.props.review.title}</p>
+        <div>
+          <span className="reviewstars">
+            <ReviewStars rating={this.props.review.stars} />
+          </span>
+          <span className="authoranddate">
+            {this.props.review.author}
+             -
+            {this.props.review.createdAt}
+          </span>
+        </div>
+        {this.props.review.body.length > 200 // 245 characters in real app => also change line 38
+          ? (
+            <div>
+              <p>
+                {this.state.more ? this.props.review.body : this.props.review.body.slice(0, 200)}
+                {this.state.more ? null : <span>...</span>}
+              </p>
+              <div>
+                {this.state.more ? <button type="button" onClick={() => this.toggleMore()}>Less</button> : <button type="button" onClick={() => this.toggleMore()}>More</button>}
+              </div>
+            </div>
+          ) : <p>{this.props.review.body}</p>}
+      </div>
+    );
+  }
+}
+
+// ReviewListEntry.propTypes = {
+//   review: propTypes.object.isRequired,
+// };
 
 export default ReviewListEntry;
+
