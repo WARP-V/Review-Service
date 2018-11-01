@@ -52,4 +52,13 @@ describe('<App /> Functionality', () => {
     expect(app.first().hasClass('reviews')).toBeTruthy();
     expect(app.first().hasClass('all')).toBeFalsy();
   });
+
+  it('getReviews should receive an Array of Reviews when called', () => {
+    const app = shallow(<App />);
+    console.log('============>', App.getReviews);
+    expect.assertions(1);
+    return app.getReviews().then(response => (
+      expect(Array.isArray(response)).toBeTruthy()
+    ));
+  });
 });

@@ -14,33 +14,34 @@ class ReviewListEntry extends React.Component {
   }
 
   toggleMore() {
-    const more = !this.state.more;
-    this.setState({ more });
+    this.setState(prevState => ({ more: !prevState.more }));
   }
 
   render() {
+    const { review } = this.props;
+    const { more } = this.state;
     return (
       <div className="review">
-        <p className="reviewTitle">{this.props.review.title}</p>
+        <p className="reviewTitle">{review.title}</p>
         <div>
           <span className="reviewstars">
-            <ReviewStars rating={this.props.review.stars} />
+            <ReviewStars rating={review.stars} />
           </span>
           <span className="reviewDateAndAuthor">
-            {this.props.review.author}
+            {review.author}
             -
-            {moment(this.props.review.createdAt).format('MMM DD, YYYY')}
+            {moment(review.createdAt).format('MMM DD, YYYY')}
           </span>
         </div>
-        {this.props.review.body.length > 200 // 245 characters in real app => also change line 38
+        {review.body.length > 200 // 245 characters in real app => also change line 38
           ? (
             <div className="reviewBody">
               <p>
-                {this.state.more ? this.props.review.body : this.props.review.body.slice(0, 200)}
-                {this.state.more ? null : <span>...</span>}
+                {more ? review.body : review.body.slice(0, 200)}
+                {more ? null : <span>...</span>}
               </p>
               <div>
-                {this.state.more
+                {more
                   ? (
                     <button type="button" onClick={() => this.toggleMore()}>
                       <span className="moreButton">Less</span>
@@ -62,15 +63,14 @@ class ReviewListEntry extends React.Component {
                 }
               </div>
             </div>
-          ) : <p>{this.props.review.body}</p>}
+          ) : <p>{review.body}</p>}
       </div>
     );
   }
 }
 
-// ReviewListEntry.propTypes = {
-//   review: propTypes.object.isRequired,
-// };
+ReviewListEntry.propTypes = {
+  review: propTypes.instanceOf(Object).isRequired,
+};
 
 export default ReviewListEntry;
-

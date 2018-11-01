@@ -13,16 +13,17 @@ class ReviewList extends React.Component {
   }
 
   toggleAllReviews() {
-    const allReviews = !this.state.allReviews;
-    this.setState({ allReviews });
+    this.setState(prevState => ({ allReviews: !prevState.allReviews }));
   }
 
   render() {
-    if (this.state.allReviews) {
+    const { allReviews } = this.state;
+    const { reviews } = this.props;
+    if (allReviews) {
       return (
         <div>
           <div>
-            {this.props.reviews.map(review => <ReviewListEntry key={review._id} review={review} />)}
+            {reviews.map(review => <ReviewListEntry key={review._id} review={review} />)}
           </div>
           <div>
             <button type="button" className="moreReviewsbutton" onClick={() => this.toggleAllReviews()}>Less Reviews</button>
@@ -33,10 +34,10 @@ class ReviewList extends React.Component {
     return (
       <div>
         <div>
-          {this.props.reviews.slice(0, 2).map(review => <ReviewListEntry key={review._id} review={review} />)}
+          {reviews.slice(0, 2).map(review => <ReviewListEntry key={review._id} review={review} />)}
         </div>
         <div>
-          {this.props.reviews.length > 2 ? <button className="moreReviewsbutton" type="button" onClick={() => this.toggleAllReviews()}>More Reviews</button> : null}
+          {reviews.length > 2 ? <button className="moreReviewsbutton" type="button" onClick={() => this.toggleAllReviews()}>More Reviews</button> : null}
         </div>
       </div>
     );
@@ -44,8 +45,7 @@ class ReviewList extends React.Component {
 }
 
 ReviewList.propTypes = {
-  reviews: propTypes.array.isRequired,
+  reviews: propTypes.instanceOf(Array).isRequired,
 };
 
 export default ReviewList;
-
