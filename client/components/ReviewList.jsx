@@ -25,7 +25,7 @@ class ReviewList extends React.Component {
             {this.props.reviews.map(review => <ReviewListEntry key={review._id} review={review} />)}
           </div>
           <div>
-            <button type="button" onClick={() => this.toggleAllReviews()}>Less Reviews</button>
+            <button type="button" className="moreReviewsbutton" onClick={() => this.toggleAllReviews()}>Less Reviews</button>
           </div>
         </div>
       );
@@ -36,7 +36,7 @@ class ReviewList extends React.Component {
           {this.props.reviews.slice(0, 2).map(review => <ReviewListEntry key={review._id} review={review} />)}
         </div>
         <div>
-          {this.props.reviews.length > 2 ? <button type="button" onClick={() => this.toggleAllReviews()}>More Reviews</button> : null}
+          {this.props.reviews.length > 2 ? <button className="moreReviewsbutton" type="button" onClick={() => this.toggleAllReviews()}>More Reviews</button> : null}
         </div>
       </div>
     );
@@ -49,6 +49,3 @@ ReviewList.propTypes = {
 
 export default ReviewList;
 
-// const ReviewList = ({ reviews }) => (
-
-// );
