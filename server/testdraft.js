@@ -25,7 +25,8 @@
 //   request(api).get('/554724-109/reviews').then((response) => {
 //     expect(typeof response.body[0])
 //       .toBe('object');
-//     expect(requiredProperties.every(property => Object.keys(response.body[0]).includes(property)))
+//     expect(requiredProperties.every(property =>
+//        Object.keys(response.body[0]).includes(property)))
 //       .toBe(true);
 //     expect(response.body.every(review => review.stars >= 0 && review.stars < 6))
 //       .toBeTruthy();

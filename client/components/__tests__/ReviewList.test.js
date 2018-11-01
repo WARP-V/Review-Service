@@ -6,38 +6,7 @@ import ReviewListEntry from '../ReviewListEntry';
 
 Enzyme.configure({ adapter: new Adapter() });
 
-const dummyReviews = [
-  {
-    '_id': '5bd7ccece4bb1334484ef1f7',
-    'shoeID': '554724-071',
-    'author': 'Keren Gloria',
-    'title': 'Lorem Ipsum',
-    'stars': 4,
-    'body': 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
-    'createdAt': '2034-07-26T13:16:43.646Z',
-    '__v': 0,
-  },
-  {
-    '_id': '5bd7ccece4bb1334484ef1f8',
-    'shoeID': '554724-071',
-    'author': 'Milo Heuer',
-    'title': 'Lorem Ipsum',
-    'stars': 2,
-    'body': 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
-    'createdAt': '2031-12-25T00:40:08.022Z',
-    '__v': 0
-  },
-  {
-    '_id': '5bd7ccece4bb1334484ef1f9',
-    'shoeID': '554724-071',
-    'author': 'Marcus Varnadoe',
-    'title': 'Lorem Ipsum',
-    'stars': 3,
-    'body': 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
-    'createdAt': '2033-06-19T16:26:17.837Z',
-    '__v': 0,
-  }
-];
+const dummyReviews = [{}, {}, {}];
 
 describe('<ReviewList /> Functionality', () => {
   it('should initially not have allReviews status', () => {

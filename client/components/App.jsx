@@ -35,8 +35,7 @@ class App extends React.Component {
   }
 
   toggleSize() {
-    const open = !this.state.open;
-    this.setState({ open });
+    this.setState(prevState => ({ open: !prevState.open }));
   }
 
   calculateAverageRating(reviews) {
@@ -45,28 +44,31 @@ class App extends React.Component {
   }
 
   render() {
+    const { open } = this.state;
+    const { reviews } = this.state;
+    const { averageRating } = this.state;
     return (
-      <div className={this.state.open ? 'all reviews' : 'reviews'}>
-        <button className='overallButton' type='button' onClick={() => this.toggleSize()}>
+      <div className={open ? 'all reviews' : 'reviews'}>
+        <button className="overallButton" type="button" onClick={() => this.toggleSize()}>
           <span className="reviewOversight">
             Reviews (
-            {this.state.reviews.length}
+            {reviews.length}
             )
           </span>
           <span>
-            <svg className="overallArrow" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><path d={this.state.open ? "M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z" : "M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"} /><path fill="none" d="M0 0h24v24H0V0z"/></svg>
+            <svg className="overallArrow" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24">
+              <path d={open ? 'M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z' : 'M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z'} />
+              <path fill="none" d="M0 0h24v24H0V0z" />
+            </svg>
           </span>
           <span>
-            <OverallStars className="overallStars" averageRating={this.state.averageRating} />
+            <OverallStars className="overallStars" averageRating={averageRating} />
           </span>
         </button>
-        <ReviewList reviews={this.state.reviews} />
+        <ReviewList reviews={reviews} />
       </div>
     );
   }
 }
 
 export default App;
-
-//            <svg className="upward-arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/><path d="M0 0h24v24H0z" fill="none"/></svg>
-//            <svg className="upward-arrow" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/><path fill="none" d="M0 0h24v24H0V0z"/></svg>

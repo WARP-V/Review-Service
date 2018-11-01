@@ -3,9 +3,9 @@ import propTypes from 'prop-types';
 
 const ReviewStars = ({ rating }) => (
   <span className="reviewstars">
-    {[null, null, null, null, null].map((star, index) => {
-      return rating > index ? <span key={index}>&#9733;</span> : <span>&#9734;</span>;
-    })}
+    {[{ id: 'a' }, { id: 'b' }, { id: 'c' }, { id: 'd' }, { id: 'e' }].map((star, index) => (rating > index
+      ? <span key={star.id}>&#9733;</span> : <span key={star.id}>&#9734;</span>
+    ))}
   </span>
 );
 
