@@ -28,8 +28,8 @@ class ReviewListEntry extends React.Component {
           </span>
           <span className="authoranddate">
             {this.props.review.author}
-             -
-            {moment({this.props.review.createdAt})}
+            -
+            {moment(this.props.review.createdAt).format('MMM DD, YYYY')}
           </span>
         </div>
         {this.props.review.body.length > 200 // 245 characters in real app => also change line 38
@@ -54,4 +54,3 @@ class ReviewListEntry extends React.Component {
 // };
 
 export default ReviewListEntry;
-
