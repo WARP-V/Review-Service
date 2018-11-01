@@ -1,5 +1,6 @@
 import React from 'react';
 import propTypes from 'prop-types';
+import moment from 'moment';
 import ReviewStars from './ReviewStars';
 
 
@@ -28,7 +29,7 @@ class ReviewListEntry extends React.Component {
           <span className="authoranddate">
             {this.props.review.author}
              -
-            {this.props.review.createdAt}
+            {moment({this.props.review.createdAt})}
           </span>
         </div>
         {this.props.review.body.length > 200 // 245 characters in real app => also change line 38
