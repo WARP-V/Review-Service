@@ -2,6 +2,7 @@ import axios from 'axios';
 import React from 'react';
 import ReviewList from './ReviewList';
 import OverallStars from './OverallStars';
+import styles from './style.css';
 
 
 class App extends React.Component {
@@ -25,7 +26,7 @@ class App extends React.Component {
   }
 
   getReviews() {
-    const { shoeID } = this.state || '554724-071';
+    const { shoeID } = this.state;
     axios.get(`/${shoeID}/reviews`)
       .then((response) => {
         const reviews = response.data;
