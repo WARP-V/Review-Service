@@ -12,7 +12,7 @@
     "db-seed": "node server/database/newSeed.js",
     "test-db": "jest server/database/test.js",
     "test-server": "jest server/server.test.js",
-    "eslint-dev": "./node_modules/.bin/eslint --ignore-path .gitignore .",
+    "eslint-dev": "./node_modules/.bin/eslint --ignore-path .eslintignore .",
     "pretest": "npm run eslint-dev",
     "jest": "npx jest"
   },
