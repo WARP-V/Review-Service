@@ -6,7 +6,6 @@
 //       'author': 'Nicolas Kamin',
 //       'title': 'Lorem Ipsum',
 //       'stars': 2,
-//       'body': 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
 //       'createdAt': '2043-01-25T23:41:06.085Z',
 //       '__v': 0
 //     },
@@ -16,7 +15,6 @@
 //       'author': 'Bernadette Golston',
 //       'title': 'Lorem Ipsum',
 //       'stars': 0,
-//       'body': 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
 //       'createdAt': '2031-04-25T16:47:42.912Z',
 //       '__v': 0
 //     },
@@ -26,7 +24,6 @@
 //       'author': 'Leisha Jalbert',
 //       'title': 'Lorem Ipsum',
 //       'stars': 4,
-//       'body': 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
 //       'createdAt': '2043-03-28T18:09:26.860Z',
 //       '__v': 0
 //     },
