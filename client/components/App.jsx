@@ -49,21 +49,21 @@ class App extends React.Component {
     const { reviews } = this.state;
     const { averageRating } = this.state;
     return (
-      <div className={open ? 'all reviews' : 'reviews'}>
-        <button className="overallButton" type="button" onClick={() => this.toggleSize()}>
-          <span className="reviewOversight">
+      <div className={open ? styles.allReviews : styles.reviews}>
+        <button className={styles.overallButton} type="button" onClick={() => this.toggleSize()}>
+          <span className={styles.reviewOversight}>
             Reviews (
             {reviews.length}
             )
           </span>
           <span>
-            <svg className="overallArrow" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24">
+            <svg className={styles.overallArrow} xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24">
               <path d={open ? 'M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z' : 'M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z'} />
               <path fill="none" d="M0 0h24v24H0V0z" />
             </svg>
           </span>
           <span>
-            <OverallStars className="overallStars" averageRating={averageRating} />
+            <OverallStars className={styles.overallStars} averageRating={averageRating} />
           </span>
         </button>
         <ReviewList reviews={reviews} />

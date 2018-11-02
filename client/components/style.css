@@ -11,10 +11,17 @@
   border-color: #D3D3D3;
 }
 
-.all {
+.allReviews {
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   height: auto;
+  width: 377px;
   overflow: hidden;
+  border-top: solid;
+  border-width: 1px; 
+  border-color: #6d6d6d;
+  border-bottom: solid;
+  border-width: 1px; 
+  border-color: #D3D3D3;
 }
 
 button {
