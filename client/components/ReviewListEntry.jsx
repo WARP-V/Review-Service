@@ -2,7 +2,6 @@ import React from 'react';
 import propTypes from 'prop-types';
 import moment from 'moment';
 import ReviewStars from './ReviewStars';
-import styles from './style.css';
 
 
 class ReviewListEntry extends React.Component {
@@ -22,13 +21,13 @@ class ReviewListEntry extends React.Component {
     const { review } = this.props;
     const { more } = this.state;
     return (
-      <div className={styles.review}>
-        <p className={styles.reviewTitle}>{review.title}</p>
+      <div className="review">
+        <p className="reviewTitle">{review.title}</p>
         <div>
-          <span className={styles.reviewstars}>
+          <span className="reviewstars">
             <ReviewStars rating={review.stars} />
           </span>
-          <span className={styles.reviewDateAndAuthor}>
+          <span className="reviewDateAndAuthor">
             {review.author}
             -
             {moment(review.createdAt).format('MMM DD, YYYY')}
@@ -36,7 +35,7 @@ class ReviewListEntry extends React.Component {
         </div>
         {review.body.length > 200 // 245 characters in real app => also change line 38
           ? (
-            <div className={styles.reviewBody}>
+            <div className="reviewBody">
               <p>
                 {more ? review.body : review.body.slice(0, 200)}
                 {more ? null : <span>...</span>}
@@ -45,7 +44,7 @@ class ReviewListEntry extends React.Component {
                 {more
                   ? (
                     <button type="button" onClick={() => this.toggleMore()}>
-                      <span className={styles.moreButton}>Less</span>
+                      <span className="moreButton">Less</span>
                       <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24">
                         <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z" />
                         <path d="M0 0h24v24H0z" fill="none" />
@@ -54,7 +53,7 @@ class ReviewListEntry extends React.Component {
                   )
                   : (
                     <button type="button" onClick={() => this.toggleMore()}>
-                      <span className={styles.moreButton}>More</span>
+                      <span className="moreButton">More</span>
                       <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24">
                         <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z" />
                         <path fill="none" d="M0 0h24v24H0V0z" />

@@ -23,7 +23,7 @@ describe('<App /> Component', () => {
   it('should render an inner div', () => {
     const app = shallow(<App />);
     const divs = app.find('div').first();
-    expect(divs.find(`.${styles.reviews}`).length).toBeGreaterThan(0);
+    expect(divs.find('.reviews').length).toBeGreaterThan(0);
   });
 
   it('should render an "OverallStars" and "ReviewList" component', () => {
@@ -37,26 +37,26 @@ describe('<App /> Functionality', () => {
   it('should toggle state when Reviews button is clicked', () => {
     const app = shallow(<App />);
     expect(app.state('open')).toBeFalsy();
-    app.find(`.${styles.overallButton}`).simulate('click');
+    app.find('.overallButton').simulate('click');
     expect(app.state('open')).toBeTruthy();
   });
 
   it('should toggle the class of the div when the Reviews button is clicked once', () => {
     const app = shallow(<App />);
     console.log(`.${styles.allreviews}`);
-    expect(app.find(`.${styles.reviews}`).length).toBeGreaterThan(0);
-    expect(app.find(`.${styles.allReviews}`).length).toBe(0);
-    app.find(`.${styles.overallButton}`).simulate('click');
-    expect(app.find(`.${styles.reviews}`).length).toBe(0);
-    expect(app.find(`.${styles.allReviews}`).length).toBeGreaterThan(0);
+    expect(app.find('.reviews').length).toBeGreaterThan(0);
+    expect(app.find('.allReviews').length).toBe(0);
+    app.find('.overallButton').simulate('click');
+    expect(app.find('.reviews').length).toBe(0);
+    expect(app.find('.allReviews').length).toBeGreaterThan(0);
   });
 
   it('should toggle the class of the div when the Reviews button is clicked a second time', () => {
     const app = shallow(<App />);
-    app.find(`.${styles.overallButton}`).simulate('click');
-    app.find(`.${styles.overallButton}`).simulate('click');
-    expect(app.find(`.${styles.reviews}`).length).toBeGreaterThan(0);
-    expect(app.find(`.${styles.allReviews}`).length).toBe(0);
+    app.find('.overallButton').simulate('click');
+    app.find('.overallButton').simulate('click');
+    expect(app.find('.reviews').length).toBeGreaterThan(0);
+    expect(app.find('.allReviews').length).toBe(0);
   });
 
   // it('getReviews should receive an Array of Reviews when called', () => {

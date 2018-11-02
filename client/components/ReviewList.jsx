@@ -1,7 +1,6 @@
 import React from 'react';
 import propTypes from 'prop-types';
 import ReviewListEntry from './ReviewListEntry';
-import styles from './style.css';
 
 
 class ReviewList extends React.Component {
@@ -27,7 +26,7 @@ class ReviewList extends React.Component {
             {reviews.map(review => <ReviewListEntry key={review._id} review={review} />)}
           </div>
           <div>
-            <button type="button" className={styles.moreReviewsbutton} onClick={() => this.toggleAllReviews()}>Less Reviews</button>
+            <button type="button" className="moreReviewsbutton" onClick={() => this.toggleAllReviews()}>Less Reviews</button>
           </div>
         </div>
       );
@@ -38,7 +37,7 @@ class ReviewList extends React.Component {
           {reviews.slice(0, 2).map(review => <ReviewListEntry key={review._id} review={review} />)}
         </div>
         <div>
-          {reviews.length > 2 ? <button className={styles.moreReviewsbutton} type="button" onClick={() => this.toggleAllReviews()}>More Reviews</button> : null}
+          {reviews.length > 2 ? <button className="moreReviewsbutton" type="button" onClick={() => this.toggleAllReviews()}>More Reviews</button> : null}
         </div>
       </div>
     );
