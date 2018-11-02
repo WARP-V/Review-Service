@@ -25,7 +25,7 @@ class App extends React.Component {
   }
 
   getReviews() {
-    const { shoeID } = this.state;
+    const { shoeID } = this.state || '554724-071';
     axios.get(`/${shoeID}/reviews`)
       .then((response) => {
         const reviews = response.data;

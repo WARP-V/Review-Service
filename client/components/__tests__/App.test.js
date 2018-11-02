@@ -1,9 +1,15 @@
 import React from 'react';
-import Enzyme, { shallow } from 'enzyme';
+import Enzyme, { shallow, mount, render } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
+import sinon from 'sinon';
 import App from '../App';
 import OverallStars from '../OverallStars';
 import ReviewList from '../ReviewList';
+
+// jest.mock('../__mocks__/request');
+
+// import * as MockApp from '../App';
+
 
 Enzyme.configure({ adapter: new Adapter() });
 
@@ -53,12 +59,24 @@ describe('<App /> Functionality', () => {
     expect(app.first().hasClass('all')).toBeFalsy();
   });
 
-  it('getReviews should receive an Array of Reviews when called', () => {
-    const app = shallow(<App />);
-    console.log('============>', App.getReviews);
-    expect.assertions(1);
-    return app.getReviews().then(response => (
-      expect(Array.isArray(response)).toBeTruthy()
-    ));
+  // it('getReviews should receive an Array of Reviews when called', () => {
+  //   render(<App />);
+  //   // console.log('============>', App.prototype.getReviews);
+  //   expect.assertions(1);
+  //   return MockApp.prototype.getReviews().then(response => (
+  //     expect(Array.isArray(response)).toBeTruthy()
+  //   ));
+  // });
+
+  it('componentDidMount should be invoked after mounting', () => {
+    sinon.spy(App.prototype, 'componentDidMount');
+    mount(<App />);
+    expect(App.prototype.componentDidMount.callCount).toBeGreaterThan(0);
+  });
+
+  it('getReviews should be invoked after mounting', () => {
+    sinon.spy(App.prototype, 'getReviews');
+    mount(<App />);
+    expect(App.prototype.getReviews.callCount).toBeGreaterThan(0);
   });
 });
