@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Code coverage report for ReviewList.jsx</title>
+    <title>Code coverage report for ShippingAndReturns.jsx</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="prettify.css" />
     <link rel="stylesheet" href="base.css" />
@@ -16,13 +16,13 @@
 <div class='wrapper'>
   <div class='pad1'>
     <h1>
-      <a href="index.html">All files</a> ReviewList.jsx
+      <a href="index.html">All files</a> ShippingAndReturns.jsx
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>15/15</span>
+        <span class='fraction'>8/8</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -32,12 +32,12 @@
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>8/8</span>
+        <span class='fraction'>5/5</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>14/14</span>
+        <span class='fraction'>7/7</span>
       </div>
     </div>
   </div>
@@ -90,112 +90,100 @@
 45
 46
 47
-48
-49
-50
-51
-52</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+48</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">9x</span>
-<span class="cline-any cline-yes">9x</span>
-<span class="cline-any cline-yes">9x</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">10x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from 'react';
-import propTypes from 'prop-types';
-import ReviewListEntry from './ReviewListEntry';
 &nbsp;
-&nbsp;
-class ReviewList extends React.Component {
-  constructor(props) {
-    super(props);
+class ShippingAndReturns extends React.Component {
+  constructor() {
+    super();
     this.state = {
-      allReviews: false,
+      open: false,
     };
-    this.toggleAllReviews = this.toggleAllReviews.bind(this);
+    this.toggleSize = this.toggleSize.bind(this);
   }
 &nbsp;
-  toggleAllReviews() {
-    this.setState(prevState =&gt; ({ allReviews: !prevState.allReviews }));
+  toggleSize() {
+    this.setState(prevState =&gt; ({ open: !prevState.open }));
   }
 &nbsp;
   render() {
-    const { allReviews } = this.state;
-    const { reviews } = this.props;
-    if (allReviews) {
-      return (
-        &lt;div&gt;
-          &lt;div&gt;
-            {reviews.map(review =&gt; &lt;ReviewListEntry key={review._id} review={review} /&gt;)}
-          &lt;/div&gt;
-          &lt;div&gt;
-            &lt;button type="button" className="moreReviewsbutton" onClick={() =&gt; this.toggleAllReviews()}&gt;Less Reviews&lt;/button&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-      );
-    }
+    const { open } = this.state;
     return (
-      &lt;div&gt;
+      &lt;div className={open ? 'allShipping' : 'shipping'}&gt;
+        &lt;button className="overallButton" type="button" onClick={() =&gt; this.toggleSize()}&gt;
+          &lt;span className="shippingTitle"&gt;
+            Free Shipping &amp; Returns
+          &lt;/span&gt;
+          &lt;span&gt;
+            &lt;svg className="overallArrow" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"&gt;
+              &lt;path d={open ? 'M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z' : 'M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z'} /&gt;
+              &lt;path fill="none" d="M0 0h24v24H0V0z" /&gt;
+            &lt;/svg&gt;
+          &lt;/span&gt;
+        &lt;/button&gt;
         &lt;div&gt;
-          {reviews.slice(0, 2).map(review =&gt; &lt;ReviewListEntry key={review._id} review={review} /&gt;)}
-        &lt;/div&gt;
-        &lt;div&gt;
-          {reviews.length &gt; 2 ? &lt;button className="moreReviewsbutton" type="button" onClick={() =&gt; this.toggleAllReviews()}&gt;More Reviews&lt;/button&gt; : null}
+          &lt;p&gt;
+            Free standard shipping and 60-day free returns, only with NikePlus. Exclusions apply.
+            &lt;u&gt;Learn more.&lt;/u&gt;
+          &lt;/p&gt;
+          &lt;ul&gt;
+            &lt;li&gt;Standard / Arrives 2-4 Business Days&lt;/li&gt;
+            &lt;li&gt;Two-Day / Arrives 2-3 Business Days&lt;/li&gt;
+            &lt;li&gt;Next-Day / Arrives 1-2 Business Days&lt;/li&gt;
+          &lt;/ul&gt;
         &lt;/div&gt;
       &lt;/div&gt;
     );
   }
 }
 &nbsp;
-ReviewList.propTypes = {
-  reviews: propTypes.instanceOf(Array).isRequired,
-};
-&nbsp;
-export default ReviewList;
+export default ShippingAndReturns;
 &nbsp;</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
