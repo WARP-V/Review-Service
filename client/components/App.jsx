@@ -2,6 +2,7 @@ import axios from 'axios';
 import React from 'react';
 import ReviewList from './ReviewList';
 import OverallStars from './OverallStars';
+import ShippingAndReturns from './ShippingAndReturns';
 
 
 class App extends React.Component {
@@ -48,24 +49,27 @@ class App extends React.Component {
     const { reviews } = this.state;
     const { averageRating } = this.state;
     return (
-      <div className={open ? 'allReviews' : 'reviews'}>
-        <button className="overallButton" type="button" onClick={() => this.toggleSize()}>
-          <span className="reviewOversight">
-            Reviews (
-            {reviews.length}
-            )
-          </span>
-          <span>
-            <svg className="overallArrow" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24">
-              <path d={open ? 'M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z' : 'M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z'} />
-              <path fill="none" d="M0 0h24v24H0V0z" />
-            </svg>
-          </span>
-          <span>
-            <OverallStars className="overallStars" averageRating={averageRating} />
-          </span>
-        </button>
-        <ReviewList reviews={reviews} />
+      <div>
+        <ShippingAndReturns />
+        <div className={open ? 'allReviews' : 'reviews'}>
+          <button className="overallButton" type="button" onClick={() => this.toggleSize()}>
+            <span className="reviewOversight">
+              Reviews (
+              {reviews.length}
+              )
+            </span>
+            <span>
+              <svg className="overallArrow" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24">
+                <path d={open ? 'M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z' : 'M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z'} />
+                <path fill="none" d="M0 0h24v24H0V0z" />
+              </svg>
+            </span>
+            <span>
+              <OverallStars className="overallStars" averageRating={averageRating} />
+            </span>
+          </button>
+          <ReviewList reviews={reviews} />
+        </div>
       </div>
     );
   }
