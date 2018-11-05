@@ -8,6 +8,7 @@
   },
   "scripts": {
     "react-dev": "webpack -d --watch",
+    "build": "webpack -d",
     "server-dev": "nodemon server/server.js",
     "db-seed": "node server/database/newSeed.js",
     "test-db": "jest server/database/test.js",

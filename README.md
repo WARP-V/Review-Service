@@ -1,13 +1,16 @@
-# Project Name
+# FEC => Review Service Module
 
-> Project description
+> Review Module for WARP-V's FEC HRSF105
 
 ## Related Projects
 
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
+  - https://github.com/WARP-V/Sizing-Cart_Service
+  - https://github.com/WARP-V/Navigation-Search-Service
+  - https://github.com/WARP-V/page-footer
+  - https://github.com/WARP-V/similar-products-carousel
+  - https://github.com/WARP-V/shoe_name_and_colors
+  - https://github.com/WARP-V/main_photo_gallery
+
 
 ## Table of Contents
 
@@ -17,13 +20,13 @@
 
 ## Usage
 
-> Some usage instructions
+> If no reviews appear run 'npm run db-seed' again.
 
 ## Requirements
 
 An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
 
-- Node 6.13.0
+- Node 6.13.1
 - etc
 
 ## Development
@@ -32,8 +35,11 @@ An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
 
 From within the root directory:
 
-```sh
+```
 npm install -g webpack
 npm install
+npm run build
+npm run server-dev
+npm run db-seed
 ```
 
