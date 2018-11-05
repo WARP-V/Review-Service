@@ -76,6 +76,7 @@ describe('<App /> Functionality', () => {
 
   it('getReviews should be invoked after mounting', () => {
     sinon.spy(App.prototype, 'getReviews');
+    expect(App.prototype.getReviews.callCount).toBe(0);
     mount(<App />);
     expect(App.prototype.getReviews.callCount).toBeGreaterThan(0);
   });
