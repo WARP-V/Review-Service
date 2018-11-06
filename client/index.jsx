@@ -7,6 +7,5 @@ import './components/style.css';
 
 // ReactDOM.render(<App />, document.getElementById('app'));
 
-window.Reviews = App
-
+window.Reviews = App;
 

@@ -1,4 +1,4 @@
-.reviews {
+#review-model .reviews {
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   height: 80px;
   width: 377px;
@@ -11,7 +11,7 @@
   border-color: #D3D3D3;
 }
 
-.allReviews {
+#review-model .allReviews {
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   height: auto;
   width: 377px;
@@ -24,7 +24,7 @@
   border-color: #D3D3D3;
 }
 
-button {
+#review-model button {
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   background-color: white;
   border: none;
@@ -34,11 +34,11 @@ button {
   padding: 0px;
 }
 
-button:focus {
+#review-model button:focus {
   outline: none;
 }
 
-.overallButton {
+#review-model .overallButton {
   padding-top: 25px;
   padding-bottom: 25px;
   font-size: 20px;
@@ -47,57 +47,57 @@ button:focus {
   border-bottom: none;
 }
 
-.reviewOversight {
+#review-model .reviewOversight {
   float: left;
 }
 
-.overallStars {
+#review-model .overallStars {
   float: right;
 }
 
-.reviewTitle {
+#review-model .reviewTitle {
   font-weight: 700;
 }
 
-p {
+#review-model p {
   line-height: 1.714285714285714;
   font-size: 14px;
 }
 
-.reviewstars {
+#review-model .reviewstars {
   font-size: 12px;
 }
 
-.reviewDateAndAuthor {
+#review-model .reviewDateAndAuthor {
   font-size: 12px;
   color: #6d6d6d;
   margin-left: 20px;
 }
 
-.reviewBody {
+#review-model .reviewBody {
   font-size: 14px;
   margin-bottom: 40px;
 }
 
-.moreReviewsbutton {
+#review-model .moreReviewsbutton {
   margin-bottom: 60px;
   border-bottom: 1px solid black;
 }
 
-.overallArrow {
+#review-model .overallArrow {
   float: right;
   margin-left: 10px;
 }
 
-.moreButton {
+#review-model .moreButton {
   border-bottom: 1px solid black;
 }
 
-.shippingTitle {
+#review-model .shippingTitle {
   float: left;
 }
 
-.shipping {
+#review-model .shipping {
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   height: 80px;
   width: 377px;
@@ -110,7 +110,7 @@ p {
   border-color: #D3D3D3;
 }
 
-.allShipping {
+#review-model .allShipping {
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   height: auto;
   width: 377px;
@@ -124,13 +124,13 @@ p {
   margin-bottom: 40px;
 }
 
-ul {
+#review-model ul {
   font-size: 14px;
   margin-left: 5px;
   padding-left: 10px;
 }
 
-li {
+#review-model li {
   margin-bottom: 5px;
   margin-left: 0px;
   padding-left: 0px;

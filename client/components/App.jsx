@@ -49,7 +49,7 @@ class App extends React.Component {
     const { reviews } = this.state;
     const { averageRating } = this.state;
     return (
-      <div>
+      <div id="review-model">
         <ShippingAndReturns />
         <div className={open ? 'allReviews' : 'reviews'}>
           <button className="overallButton" type="button" onClick={() => this.toggleSize()}>
