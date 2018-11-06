@@ -76,10 +76,10 @@ p {
 
 .reviewBody {
   font-size: 14px;
+  margin-bottom: 40px;
 }
 
 .moreReviewsbutton {
-  margin-top: 40px;
   margin-bottom: 60px;
   border-bottom: 1px solid black;
 }
