@@ -9,6 +9,7 @@
   "scripts": {
     "watch": "webpack -d --watch",
     "build": "webpack -d",
+    "start": "node server/server.js",
     "server-dev": "nodemon server/server.js",
     "db-seed": "node server/database/newSeed.js",
     "test-db": "jest server/database/test.js",

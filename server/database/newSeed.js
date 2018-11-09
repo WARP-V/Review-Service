@@ -39,7 +39,7 @@ function randomDate(start, end) {
 const createDummyReviews = () => {
   const dummyReviews = [];
   shoeIDs.forEach((shoeID) => {
-    const numberOfReviews = Math.floor(Math.random() * 4);
+    const numberOfReviews = 3;
     for (let i = 0; i < numberOfReviews; i += 1) {
       const randomName = names[Math.floor(Math.random() * names.length)];
       const review = {
@@ -62,11 +62,11 @@ const insertDummyReviews = () => {
   Schema.Review.create(dummyReviews)
     .then(() => {
       console.log('========>  insert dummy reviews => success!');
-      process.exit();
+      // process.exit();
     })
     .catch((error) => {
       console.log('========>  insert dummy reviews => failed!', error);
-      process.exit();
+      // process.exit();
     });
 };
 
