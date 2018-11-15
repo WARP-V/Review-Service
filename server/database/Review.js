@@ -58,8 +58,20 @@ const update = (id, author, callback) => {
   })
 }
 
-const remove = (id, shoeID, author, title, stars, body, createdAt, callback) => {
-  Review.findByIdAndRemove({_id: id}, {shoeID: shoeID, author: author, title: title, stars: stars, body: body, createdAt: createdAt}, (error, docs)=>{
+// const remove = (id, shoeID, author, title, stars, body, createdAt, callback) => {
+//   Review.findByIdAndRemove({_id: id}, {shoeID: shoeID, author: author, title: title, stars: stars, body: body, createdAt: createdAt}, (error, docs)=>{
+//     if(error){
+//       console.log("error find and remove");
+//       callback(error, null);
+//     } else {
+//       console.log("success find and remove ");
+//       callback(null, docs);
+//     }
+//   });
+// }
+
+const remove = (id, callback) => {
+  Review.findByIdAndRemove({_id: id}, (error, docs)=>{
     if(error){
       console.log("error find and remove");
       callback(error, null);
