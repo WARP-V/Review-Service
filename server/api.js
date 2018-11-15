@@ -42,7 +42,7 @@ api.put('/reviews/:id', function(req, res, next){
 });
 
 
-api.delete('/:id/reviews', function(req, res, next){
+api.delete('/reviews/:id', function(req, res, next){
   console.log('delete', req.body);
   Review.remove(req.params.id,req.body.shoeID,req.body.author,req.body.title,req.body.stars,req.body.body,req.body.createdAt,
     function(err,info){
