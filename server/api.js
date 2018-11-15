@@ -7,6 +7,7 @@ const api = express();
 
 api.use(express.static(path.join(__dirname, '../public/')));
 api.use(parseBody.json());
+api.use(parseBody.urlencoded({extended: true}));
 
 api.get('/:shoeID/reviews', (req, res) => {
   const { shoeID } = req.params;
@@ -18,5 +19,40 @@ api.get('/:shoeID/reviews', (req, res) => {
     }
   });
 });
+
+
+api.post('/reviews', (req, res) => {
+  console.log('kkk', req.body);
+  Review.save(req.body);
+  res.end();
+});
+
+
+api.put('/reviews/:id', function(req, res, next){
+  console.log('put', req.body);
+  Review.update(req.params.id,req.body.author,
+   function(err, info){
+    if (err) {
+      return res.status(500).json(err);
+    } else {
+      return res.json(true);
+    }
+    
+  });
+});
+
+
+api.delete('/:id/reviews', function(req, res, next){
+  console.log('delete', req.body);
+  Review.remove(req.params.id,req.body.shoeID,req.body.author,req.body.title,req.body.stars,req.body.body,req.body.createdAt,
+    function(err,info){
+      if (err) {
+        return res.status(500).json(err);
+      } else {
+        return res.json(true);
+      }
+    });
+});
+
 
 module.exports = api;

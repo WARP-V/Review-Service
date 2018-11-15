@@ -39,7 +39,7 @@ function randomDate(start, end) {
 const createDummyReviews = () => {
   const dummyReviews = [];
   shoeIDs.forEach((shoeID) => {
-    const numberOfReviews = Math.floor(Math.random() * 4);
+    const numberOfReviews = Math.floor(Math.random() * 3);
     for (let i = 0; i < numberOfReviews; i += 1) {
       const randomName = names[Math.floor(Math.random() * names.length)];
       const review = {
