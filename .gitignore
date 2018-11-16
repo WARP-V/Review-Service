@@ -1,4 +1,5 @@
 node_modules
 public/bundle.js
 webpack.config.js
+reviews.csv
 /coverage
