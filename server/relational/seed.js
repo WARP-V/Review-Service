@@ -8,7 +8,7 @@ Number.prototype.pad = function(size) {
   }
   return s;
 };
-
+//
 const csvReview = () => {
 
   const file = fs.createWriteStream('./reviews.csv');
