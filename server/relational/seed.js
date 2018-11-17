@@ -51,19 +51,17 @@
 // write();
 // module.exports = write;
 
-
-
 const fs = require("fs");
 const faker = require("faker");
 
-const stream = fs.createWriteStream("./updates.csv", { flags: "a" });
-const records = 3 * 1000000; // Number of primary records by million count
+const stream = fs.createWriteStream("./reveiws.csv", { flags: "a" });
+const records = 10 * 1000000; // Number of primary records by million count
 let i = 0;
 const start = new Date();
 
 function write() {
   while (i < records) {
-    for (let j = 0; j < 4; j += 1) {
+    for (let j = 0; j < 5; j++) {
       const shoeID = i + 1;
       let author = faker.name.findName();
       let title = faker.lorem.word();
@@ -93,7 +91,7 @@ function write() {
 
   const end = new Date();
 
-  console.log(`Took ${end - start} milliseconds to write ${records} files`);
+  console.log(`Took ${end - start} milliseconds to write ${records * 5} files`);
 }
 
 stream.on("drain", () => {
@@ -101,4 +99,3 @@ stream.on("drain", () => {
 });
 
 write();
-
