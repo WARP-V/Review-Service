@@ -9,7 +9,7 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      shoeID: '554724-071',
+      shoeID: '10000001',
       reviews: [],
       averageRating: 0,
       open: false,

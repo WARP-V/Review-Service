@@ -6,14 +6,13 @@ CREATE DATABASE nikie;
 DROP TABLE IF EXISTS review;
 
 CREATE TABLE review (
-  id SERIAL PRIMARY KEY,
+  _id SERIAL PRIMARY KEY,
   shoeID INT,
   author VARCHAR(30),
   title VARCHAR(50),
+  body VARCHAR(500),
   stars INT,
-  body VARCHAR(800),
   createdAt DATE
 );
 
-COPY review(shoeID, author, title, stars, body, createdAt) FROM '/Users/svetlanakhan/Desktop/SDCproject/Review-Service/server/relational/reveiws.csv' DELIMITERS ',' CSV;
-
+COPY review(shoeID, author, title, body, stars, createdAt) FROM '/Users/svetlanakhan/Desktop/SDCproject/Review-Service/server/relational/review.csv' DELIMITERS ',' CSV;
