@@ -43,3 +43,11 @@ npm run server-dev
 npm run db-seed
 ```
 
+
+| Action    | Method | Endpoint                                              | Purpose            |
+|-----------|--------|-------------------------------------------------------|--------------------|
+| Create    | POST   | /api/reviews                                          | Insert new review  |
+| Read      | GET    | /api/:shoeID/reviews                                  | Get review         |
+| Update    | PUT    | /api/reviews/:id                                      | Update one review  |
+| Delete    | DELETE | /api/reviews/:id                                      | Delete an review   |
+
