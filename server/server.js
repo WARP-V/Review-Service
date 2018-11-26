@@ -1,5 +1,8 @@
+const newrelic = require('newrelic');
 const express = require("express");
 const bodyParser = require("body-parser");
+const morgan = require('morgan');
+const compression = require('compression');
 const { Client, Pool } = require("pg");
 const path = require("path");
 const PORT = 3004;
@@ -11,8 +14,10 @@ const pgConnection = new Client(connectionString);
 pgConnection.connect();
 
 const app = express();
+app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(compression());
 app.use(express.static(path.join(__dirname, '../public/')));
 
 app.get("/:shoeID/reviews", (req, res) => {

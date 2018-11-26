@@ -9,7 +9,7 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      shoeID: '10000001',
+      shoeID: '9999876',
       reviews: [],
       averageRating: 0,
       open: false,
@@ -27,6 +27,9 @@ class App extends React.Component {
 
   getReviews() {
     const { shoeID } = this.state;
+    //const randomShoeId = Math.floor(Math.random() * Math.floor(10000000));
+    //const randomShoeId = Math.floor(Math.random() * 1000000) + 1;
+    
     axios.get(`/${shoeID}/reviews`)
       .then((response) => {
         const reviews = response.data;
