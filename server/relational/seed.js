@@ -1,7 +1,7 @@
 "use strict"
 const fs = require("fs");
 const faker = require("faker");
-
+//
 const stream = fs.createWriteStream("./review.csv", { flags: "a" });
 const records = 10000000; 
 let i = 0;
