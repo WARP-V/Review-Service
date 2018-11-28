@@ -7,7 +7,7 @@ const { Client, Pool } = require("pg");
 const path = require("path");
 const PORT = 3004;
 const connectionString =
-  "postgres://svetlanakhan:lana1234@54.166.22.191:5432/nikie";
+  "postgres://svetlanakhan:lana1234@us-east-1.rds.amazonaws.com:5432/nikie";
 
 const pgConnection = new Client(connectionString);
 
