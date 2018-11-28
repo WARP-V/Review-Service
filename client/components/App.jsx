@@ -5,11 +5,14 @@ import OverallStars from './OverallStars';
 import ShippingAndReturns from './ShippingAndReturns';
 
 
+const randomShoeId = Math.floor(Math.random() * Math.floor(10000000));;
+
 class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      shoeID: '9999876',
+      shoeID: randomShoeId,
+      //shoeID: '9999876',
       reviews: [],
       averageRating: 0,
       open: false,
